@@ -10,7 +10,6 @@ use App\Entity\Embedded\Telephone;
 use App\Entity\Embedded\TelephoneInterface;
 use App\Entity\Person;
 use App\Entity\PersonInterface;
-use Symfony\Component\Uid\Uuid;
 
 final class PersonFactory implements PersonFactoryInterface
 {
@@ -20,7 +19,7 @@ final class PersonFactory implements PersonFactoryInterface
      */
     public function create(array $personData): PersonInterface
     {
-        $person = new Person($this->uuid());
+        $person = new Person($personData['id']);
 
         if (isset($personData['firstName'])) {
             $person->setFirstName($personData['firstName']);
@@ -52,7 +51,7 @@ final class PersonFactory implements PersonFactoryInterface
      */
     private function createAddress(array $addressData): AddressInterface
     {
-        $address = new Address($this->uuid());
+        $address = new Address($addressData['id']);
 
         if (isset($addressData['street'])) {
             $address->setStreet($addressData['street']);
@@ -78,7 +77,7 @@ final class PersonFactory implements PersonFactoryInterface
      */
     private function createTelephone(array $telephoneData): TelephoneInterface
     {
-        $telephone = new Telephone($this->uuid());
+        $telephone = new Telephone($telephoneData['id']);
 
         if (isset($telephoneData['type'])) {
             $telephone->setType($telephoneData['type']);
@@ -89,12 +88,5 @@ final class PersonFactory implements PersonFactoryInterface
         }
 
         return $telephone;
-    }
-
-    private function uuid(): string
-    {
-        $uuid = Uuid::v4();
-
-        return (string) $uuid;
     }
 }

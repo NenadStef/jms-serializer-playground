@@ -54,7 +54,7 @@ COPY dev/php/files/bin/ /usr/local/bin/
 RUN pecl channel-update pecl.php.net && \
     pecl install xdebug && \
     docker-php-ext-install pcntl && \
-    php-ext-enable jobcloud && \
+    php-ext-enable general && \
     php-ext-disable xdebug
 
 # COMPOSER: install binary
