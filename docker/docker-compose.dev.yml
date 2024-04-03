@@ -1,0 +1,23 @@
+version: '3.2'
+
+services:
+
+  php:
+    build:
+      context: ./
+      dockerfile: dev/php/Dockerfile
+      args:
+        HOST_USER_ID: ${USER_ID}
+    tty: true
+    hostname: jms-serializer-playground-php
+    container_name: jms-serializer-playground-php
+    environment:
+      XDEBUG_SESSION: "PHPSTORM"
+    volumes:
+      - ../:/var/www/html
+    secrets:
+      - ssh_host_key
+
+secrets:
+  ssh_host_key:
+    file: ~/.ssh/id_rsa
