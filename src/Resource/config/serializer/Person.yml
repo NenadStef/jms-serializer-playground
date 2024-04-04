@@ -1,0 +1,47 @@
+Jms\Serializer\Playground\Entity\Person:
+  virtual_properties:
+    getFullName:
+      serialized_name: fullName
+      type: string
+      groups:
+        - group:serialize:public
+  properties:
+    id:
+      type: string
+      serialized_name: id
+      groups:
+        - group:serialize:private
+        - group:deserialize:private
+    firstName:
+      serialized_name: firstName
+      type: string
+      groups:
+        - group:serialize:private
+        - group:deserialize:private
+    lastName:
+      type: string
+      serialized_name: lastName
+      groups:
+        - group:serialize:private
+        - group:deserialize:private
+    dateOfBirth:
+      type: DateTimeInterface
+      serialized_name: dateOfBirth
+      groups:
+        - group:serialize:public
+        - group:serialize:private
+        - group:deserialize:private
+    address:
+      type: Jms\Serializer\Playground\Entity\Embedded\Address
+      serialized_name: address
+      groups:
+        - group:serialize:public
+        - group:serialize:private
+        - group:deserialize:private
+    telephones:
+      type: array<Jms\Serializer\Playground\Entity\Embedded\Telephone>
+      serialized_name: telephones
+      groups:
+        - group:serialize:public
+        - group:serialize:private
+        - group:deserialize:private

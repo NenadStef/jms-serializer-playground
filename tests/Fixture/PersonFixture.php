@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Fixture;
+namespace Jms\Serializer\Playground\Tests\Fixture;
 
 final class PersonFixture
 {
@@ -10,7 +10,7 @@ final class PersonFixture
         'id' => '35b57434-fb17-48c4-a163-90e0611ddbc2',
         'firstName' => 'John',
         'lastName' => 'Doe',
-        'dateOfBirth' => '1980-06-05',
+        'dateOfBirth' => '1980-01-01T00:00:00+00:00',
         'address' => [
             'id' => '06738231-8d65-47f0-8cfc-0773ec1a1231',
             'street' => 'Oxford Court 4795',

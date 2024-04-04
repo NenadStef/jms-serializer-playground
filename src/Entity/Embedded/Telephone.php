@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Entity\Embedded;
+namespace Jms\Serializer\Playground\Entity\Embedded;
 
-final class Telephone implements TelephoneInterface
+class Telephone implements TelephoneInterface
 {
     private string $id;
 
@@ -20,6 +20,11 @@ final class Telephone implements TelephoneInterface
     public function getId(): string
     {
         return $this->id;
+    }
+
+    public function getPhoneNumber(): string
+    {
+        return ucfirst($this->type) . ' ' . $this->number;
     }
 
     public function getType(): string|null

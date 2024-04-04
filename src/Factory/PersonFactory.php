@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Factory;
+namespace Jms\Serializer\Playground\Factory;
 
-use App\Entity\Embedded\Address;
-use App\Entity\Embedded\AddressInterface;
-use App\Entity\Embedded\Telephone;
-use App\Entity\Embedded\TelephoneInterface;
-use App\Entity\Person;
-use App\Entity\PersonInterface;
+use Jms\Serializer\Playground\Entity\Embedded\Address;
+use Jms\Serializer\Playground\Entity\Embedded\AddressInterface;
+use Jms\Serializer\Playground\Entity\Embedded\Telephone;
+use Jms\Serializer\Playground\Entity\Embedded\TelephoneInterface;
+use Jms\Serializer\Playground\Entity\Person;
+use Jms\Serializer\Playground\Entity\PersonInterface;
 
 final class PersonFactory implements PersonFactoryInterface
 {

@@ -2,14 +2,16 @@
 
 declare(strict_types=1);
 
-namespace App\Entity;
+namespace Jms\Serializer\Playground\Entity;
 
-use App\Entity\Embedded\AddressInterface;
-use App\Entity\Embedded\TelephoneInterface;
+use Jms\Serializer\Playground\Entity\Embedded\AddressInterface;
+use Jms\Serializer\Playground\Entity\Embedded\TelephoneInterface;
 
 interface PersonInterface
 {
     public function getId(): string;
+
+    public function getFullName(): string|null;
 
     public function getFirstName(): string|null;
 

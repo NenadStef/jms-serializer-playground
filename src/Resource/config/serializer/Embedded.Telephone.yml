@@ -1,0 +1,26 @@
+Jms\Serializer\Playground\Entity\Embedded\Telephone:
+  virtual_properties:
+    getPhoneNumber:
+      serialized_name: phoneNumber
+      type: string
+      groups:
+        - group:serialize:public
+  properties:
+    id:
+      type: string
+      serialized_name: id
+      groups:
+        - group:serialize:private
+        - group:deserialize:private
+    type:
+      type: string
+      serialized_name: type
+      groups:
+        - group:serialize:private
+        - group:deserialize:private
+    number:
+      type: integer
+      serialized_name: number
+      groups:
+        - group:serialize:private
+        - group:deserialize:private

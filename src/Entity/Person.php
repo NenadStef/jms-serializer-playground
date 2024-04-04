@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Entity;
+namespace Jms\Serializer\Playground\Entity;
 
-use App\Entity\Embedded\AddressInterface;
-use App\Entity\Embedded\TelephoneInterface;
+use Jms\Serializer\Playground\Entity\Embedded\AddressInterface;
+use Jms\Serializer\Playground\Entity\Embedded\TelephoneInterface;
 
-final class Person implements PersonInterface
+class Person implements PersonInterface
 {
     private string $id;
 
@@ -32,6 +32,11 @@ final class Person implements PersonInterface
     public function getId(): string
     {
         return $this->id;
+    }
+
+    public function getFullName(): string|null
+    {
+        return $this->firstName . ' ' . $this->lastName;
     }
 
     public function getFirstName(): string|null

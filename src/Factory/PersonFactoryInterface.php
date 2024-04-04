@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Factory;
+namespace Jms\Serializer\Playground\Factory;
 
-use App\Entity\PersonInterface;
+use Jms\Serializer\Playground\Entity\PersonInterface;
 
 interface PersonFactoryInterface
 {

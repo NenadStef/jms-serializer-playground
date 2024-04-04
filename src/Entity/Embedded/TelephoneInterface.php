@@ -2,11 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Entity\Embedded;
+namespace Jms\Serializer\Playground\Entity\Embedded;
 
 interface TelephoneInterface
 {
     public function getId(): string;
+
+    public function getPhoneNumber(): string;
 
     public function getType(): string|null;
 

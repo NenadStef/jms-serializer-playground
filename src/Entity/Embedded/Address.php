@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Entity\Embedded;
+namespace Jms\Serializer\Playground\Entity\Embedded;
 
-final class Address implements AddressInterface
+class Address implements AddressInterface
 {
     private string $id;
 
@@ -24,6 +24,11 @@ final class Address implements AddressInterface
     public function getId(): string
     {
         return $this->id;
+    }
+
+    public function getHomeTown(): string
+    {
+        return $this->city . ' ' . $this->country;
     }
 
     public function getStreet(): string|null

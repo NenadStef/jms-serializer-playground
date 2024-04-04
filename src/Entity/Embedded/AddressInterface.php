@@ -2,11 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Entity\Embedded;
+namespace Jms\Serializer\Playground\Entity\Embedded;
 
 interface AddressInterface
 {
     public function getId(): string;
+
+    public function getHomeTown(): string;
 
     public function getStreet(): string|null;
 

@@ -1,0 +1,38 @@
+Jms\Serializer\Playground\Entity\Embedded\Address:
+  virtual_properties:
+    getHomeTown:
+      serialized_name: homeTown
+      type: string
+      groups:
+        - group:serialize:public
+  properties:
+    id:
+      serialized_name: id
+      type: string
+      groups:
+        - group:serialize:private
+        - group:deserialize:private
+    street:
+      serialized_name: street
+      type: string
+      groups:
+        - group:serialize:private
+        - group:deserialize:private
+    city:
+      serialized_name: city
+      type: string
+      groups:
+        - group:serialize:private
+        - group:deserialize:private
+    country:
+      serialized_name: country
+      type: string
+      groups:
+        - group:serialize:private
+        - group:deserialize:private
+    postCode:
+      serialized_name: postCode
+      type: integer
+      groups:
+        - group:serialize:private
+        - group:deserialize:private
