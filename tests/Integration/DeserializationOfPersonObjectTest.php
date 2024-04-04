@@ -30,7 +30,7 @@ final class DeserializationOfPersonObjectTest extends BaseTestCase
             $deserializationContext
         );
 
-//        var_dump($deserializedData); die;
+//        dd($deserializedData);
 
         self::assertEquals($personData['id'], $deserializedData->getId());
         self::assertEquals($personData['firstName'], $deserializedData->getFirstName());

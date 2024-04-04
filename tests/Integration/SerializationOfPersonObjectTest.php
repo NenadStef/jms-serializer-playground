@@ -29,7 +29,7 @@ final class SerializationOfPersonObjectTest extends BaseTestCase
 
         $serializedData = $serializer->serialize($person, 'json', $serializationContext);
 
-//        var_dump(json_decode($serializedData, true)); die;
+//        dd(json_decode($serializedData, true));
 
         $expectedData = array_merge(['fullName' => $person->getFullName()], $personData);
         $expectedData['address'] = array_merge(['homeTown' => $person->getAddress()->getHomeTown()], $personData['address']);
