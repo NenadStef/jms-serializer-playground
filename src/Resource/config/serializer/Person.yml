@@ -45,3 +45,10 @@ Jms\Serializer\Playground\Entity\Person:
         - group:serialize:public
         - group:serialize:private
         - group:deserialize:private
+    personalAttributes:
+      type: csv_array
+      serialized_name: personalAttributes
+      groups:
+        - group:serialize:public
+        - group:serialize:private
+        - group:deserialize:private

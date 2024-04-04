@@ -6,10 +6,13 @@ namespace Jms\Serializer\Playground\Entity;
 
 use Jms\Serializer\Playground\Entity\Embedded\AddressInterface;
 use Jms\Serializer\Playground\Entity\Embedded\TelephoneInterface;
+use Symfony\Component\Uid\Uuid;
 
 class Person implements PersonInterface
 {
     private string $id;
+
+    private string|null $version = null;
 
     private string|null $firstName = null;
 
@@ -24,6 +27,11 @@ class Person implements PersonInterface
      */
     private array $telephones = [];
 
+    /**
+     * @var array<int, string>
+     */
+    private array $personalAttributes = [];
+
     public function __construct(string $id)
     {
         $this->id = $id;
@@ -32,6 +40,16 @@ class Person implements PersonInterface
     public function getId(): string
     {
         return $this->id;
+    }
+
+    public function getVersion(): string|null
+    {
+        return $this->version;
+    }
+
+    public function setVersion(): void
+    {
+        $this->version = (string) Uuid::v4();
     }
 
     public function getFullName(): string|null
@@ -90,5 +108,18 @@ class Person implements PersonInterface
     public function addTelephone(TelephoneInterface $telephone): void
     {
         $this->telephones[] = $telephone;
+    }
+
+    /**
+     * @return array<int, string>
+     */
+    public function getPersonalAttributes(): array
+    {
+        return $this->personalAttributes;
+    }
+
+    public function addPersonalAttribute(string $personalAttribute): void
+    {
+        $this->personalAttributes[] = $personalAttribute;
     }
 }

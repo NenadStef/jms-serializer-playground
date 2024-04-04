@@ -43,6 +43,12 @@ final class PersonFactory implements PersonFactoryInterface
             }
         }
 
+        if (isset($personData['personalAttributes'])) {
+            foreach ($personData['personalAttributes'] as $personalAttribute) {
+                $person->addPersonalAttribute($personalAttribute);
+            }
+        }
+
         return $person;
     }
 

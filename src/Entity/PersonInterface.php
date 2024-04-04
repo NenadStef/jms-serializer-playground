@@ -11,6 +11,10 @@ interface PersonInterface
 {
     public function getId(): string;
 
+    public function getVersion(): string|null;
+
+    public function setVersion(): void;
+
     public function getFullName(): string|null;
 
     public function getFirstName(): string|null;
@@ -35,4 +39,11 @@ interface PersonInterface
     public function getTelephones(): array;
 
     public function addTelephone(TelephoneInterface $telephone): void;
+
+    /**
+     * @return array<int, string>
+     */
+    public function getPersonalAttributes(): array;
+
+    public function addPersonalAttribute(string $personalAttribute): void;
 }

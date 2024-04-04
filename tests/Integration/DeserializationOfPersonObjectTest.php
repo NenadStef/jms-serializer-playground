@@ -16,6 +16,9 @@ final class DeserializationOfPersonObjectTest extends BaseTestCase
     {
         $personData = PersonFixture::getPersonData();
 
+        $personalAttributes = $personData['personalAttributes'];
+        $personData['personalAttributes'] = implode(',', $personalAttributes);
+
         $serializer = $this->createSerializer();
 
         $deserializationContext = DeserializationContext::create();
@@ -31,6 +34,8 @@ final class DeserializationOfPersonObjectTest extends BaseTestCase
         );
 
 //        dd($deserializedData);
+
+        self::assertNotNull($deserializedData->getVersion());
 
         self::assertEquals($personData['id'], $deserializedData->getId());
         self::assertEquals($personData['firstName'], $deserializedData->getFirstName());
@@ -48,5 +53,7 @@ final class DeserializationOfPersonObjectTest extends BaseTestCase
             self::assertEquals($personData['telephones'][$key]['type'], $telephone->getType());
             self::assertEquals($personData['telephones'][$key]['number'], $telephone->getNumber());
         }
+
+        self::assertEquals(explode(',', $personData['personalAttributes']), $deserializedData->getPersonalAttributes());
     }
 }

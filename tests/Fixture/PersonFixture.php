@@ -30,6 +30,11 @@ final class PersonFixture
                 'number' => 9876543,
             ],
         ],
+        'personalAttributes' => [
+            'Confidence',
+            'Honesty',
+            'Teamwork',
+        ],
     ];
 
     /**

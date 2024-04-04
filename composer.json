@@ -1,12 +1,10 @@
 {
     "name": "nenadstef/jms-serializer-playground",
-    "description": "This project is jms serializer testing",
+    "description": "This project is for jms serializer exploring and testing",
     "version": "0.0.1",
     "require": {
         "php": "^8.3",
-        "doctrine/collections": "^2.2",
         "jms/serializer": "^3.30",
-        "symfony/cache": "^7.0",
         "symfony/uid": "^7.0",
         "symfony/yaml": "^7.0"
     },
